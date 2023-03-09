@@ -27,7 +27,7 @@ public class ProdutoService {
 
 	}
 	
-	@Transactional(readOnly=true) //garantia da aplicação das propriedades ACIDE , readOnly nâo trava o banco 
+	@Transactional(readOnly=true) 
 	public List<ProdutoDTO> findAll(){
 		List<Produto> list= repository.findAll();
 		List<ProdutoDTO>listDto = new ArrayList<>();

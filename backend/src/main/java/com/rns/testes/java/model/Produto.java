@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_produto")
-public class Produto implements Serializable{
+public class Produto extends GenericEntity{
 	private static final long serialVersionUID = 1L;
 	
 	
@@ -22,8 +22,5 @@ public class Produto implements Serializable{
     @Column
     private String nome;
     
-    
-   
-     
 
 }
