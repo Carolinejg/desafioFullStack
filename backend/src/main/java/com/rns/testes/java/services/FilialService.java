@@ -3,6 +3,7 @@ package com.rns.testes.java.services;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.rns.testes.java.dto.FilialDTO;
 import com.rns.testes.java.model.Filial;
 import com.rns.testes.java.repositories.FilialRepository;
+import com.rns.testes.java.services.exceptions.ResourceNotFoundException;
 
 
 
@@ -46,6 +48,14 @@ public class FilialService{
 		}
 		
 		return listDto;
+	}
+	
+	@Transactional(readOnly=true)
+	public FilialDTO findById(int id) {
+		Optional<Filial>obj = repository.findById(id);
+		Filial entity = obj.orElseThrow(()->new ResourceNotFoundException("Entidade não encontrada"));
+		 
+		return new FilialDTO(entity);
 	}
 	
 	

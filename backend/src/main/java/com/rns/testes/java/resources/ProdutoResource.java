@@ -39,7 +39,7 @@ public class ProdutoResource {
 	public ResponseEntity<ProdutoDTO> insert(@RequestBody ProdutoDTO dto){
 		dto = service.insert(dto);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(dto.getId()).toUri(); //inserindo e repondendo no cabeçalho de resposta
+				.buildAndExpand(dto.getId()).toUri(); 
 		return ResponseEntity.created(uri).body(dto);
 		
 	}
