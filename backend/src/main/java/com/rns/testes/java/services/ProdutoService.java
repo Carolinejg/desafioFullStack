@@ -8,13 +8,15 @@ import java.util.Optional;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import com.rns.testes.java.dto.ProdutoDTO;
 import com.rns.testes.java.model.Produto;
 import com.rns.testes.java.repositories.ProdutoRepository;
+import com.rns.testes.java.services.exceptions.DatabaseException;
 import com.rns.testes.java.services.exceptions.ResourceNotFoundException;
 
 @Service
@@ -69,6 +71,18 @@ public class ProdutoService {
 			return new ProdutoDTO(entity);
 		}catch(EntityNotFoundException e) {
 			throw new  ResourceNotFoundException("Id não encontrado "+id);
+		}
+		
+	}
+	
+	public void delete(int id) {
+		try {
+			repository.deleteById(id);
+			
+		}catch(EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException("Id não encontrado "+id);
+		}catch(DataIntegrityViolationException e) {
+			throw new DatabaseException("Violação de integridade do banco");
 		}
 		
 	}
