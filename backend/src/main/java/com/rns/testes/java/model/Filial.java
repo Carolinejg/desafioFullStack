@@ -19,12 +19,12 @@ public class Filial extends GenericEntity{
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column
     private String razaoSocial;
 
-    @CNPJ
+    
     @Column
     private String cnpj;
 

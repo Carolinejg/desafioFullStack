@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Interface representa a camada de persistência da entidade Filial. Deve ser injetada <b>exclusivamente</b> em uma
  * camada service.
  */
-public interface FilialRepository extends JpaRepository<Filial, Long> {
+public interface FilialRepository extends JpaRepository<Filial, Integer> {
 
 }
