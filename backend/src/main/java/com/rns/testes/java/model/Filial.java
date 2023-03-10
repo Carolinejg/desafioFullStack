@@ -4,10 +4,6 @@ import com.rns.testes.java.enums.EnumTipoFilial;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import org.hibernate.validator.constraints.br.CNPJ;
-
-import java.io.Serializable;
-
 import javax.persistence.*;
 
 @Data
