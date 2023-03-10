@@ -1,6 +1,7 @@
 package com.rns.testes.java.services;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,14 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository repository;
 	
+	
+	
 	@Transactional
 	public ProdutoDTO insert(ProdutoDTO dto) {
 		Produto entity = new Produto();
 		entity.setNome(dto.getNome());
+		Date date = new Date();
+		entity.setDataUltAlteracao1(date);
 		entity = repository.save(entity);
 		
 		return new ProdutoDTO(entity);
@@ -38,4 +43,6 @@ public class ProdutoService {
 		
 		return listDto;
 	}
+
+	
 }
