@@ -4,6 +4,7 @@ import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +40,13 @@ public class ProdutoResource {
 				.buildAndExpand(dto.getId()).toUri(); //inserindo e repondendo no cabeçalho de resposta
 		return ResponseEntity.created(uri).body(dto);
 		
+	}
+	
+	@GetMapping(value="/{id}")
+	public ResponseEntity<ProdutoDTO>findById(@PathVariable int id){
+		ProdutoDTO dto = service.findById(id);
+		
+		return ResponseEntity.ok().body(dto);//resposta 200 ou seja foi com sucesso
 	}
 	
 
