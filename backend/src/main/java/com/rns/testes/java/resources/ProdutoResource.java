@@ -21,10 +21,10 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(value = "/produtos")//a classe repsonde nessa rota
+@RequestMapping(value = "/produtos")
 public class ProdutoResource {
 	
-	@Autowired //injetando
+	@Autowired 
 	private ProdutoService service;
 	
 	
@@ -32,7 +32,7 @@ public class ProdutoResource {
 	public ResponseEntity<List<ProdutoDTO>>findAll(){
 		List<ProdutoDTO>list = service.findAll();
 		
-		return ResponseEntity.ok().body(list);//resposta 200 ou seja foi com sucesso
+		return ResponseEntity.ok().body(list);
 	}
 	
 	@PostMapping
@@ -48,7 +48,7 @@ public class ProdutoResource {
 	public ResponseEntity<ProdutoDTO>findById(@PathVariable int id){
 		ProdutoDTO dto = service.findById(id);
 		
-		return ResponseEntity.ok().body(dto);//resposta 200 ou seja foi com sucesso
+		return ResponseEntity.ok().body(dto);
 	}
 	
 	@PutMapping(value="/{id}")
