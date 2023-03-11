@@ -57,6 +57,20 @@ public class ControleEstoqueService {
 		return listDto;
 	}
 	
+	@Transactional
+	public ControleEstoqueDTO update(int id,ControleEstoqueDTO dto) {
+		try {
+			ControleEstoque entity = repository.getOne(id);
+			entity.setFilial(dto.getFilial());
+			entity = repository.save(entity);
+			
+			return new ControleEstoqueDTO(entity);
+		}catch(EntityNotFoundException e) {
+			throw new  ResourceNotFoundException("Id não encontrado "+id);
+		}
+		
+	}
+	
 	
 	
 	
