@@ -1,6 +1,8 @@
 package com.rns.testes.java.services;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
@@ -41,9 +43,20 @@ public class ControleEstoqueService {
 			throw new DatabaseException("Violação de integridade do banco");
 		}
 		
-
-		
 	}
+	
+	@Transactional(readOnly=true) 
+	public List<ControleEstoqueDTO> findAll(){
+		List<ControleEstoque> list= repository.findAll();
+		List<ControleEstoqueDTO>listDto = new ArrayList<>();
+		
+		for(ControleEstoque cob : list) {
+			listDto.add(new ControleEstoqueDTO(cob));
+		}
+		
+		return listDto;
+	}
+	
 	
 	
 	
