@@ -13,9 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * camada service.
  */
 public interface FilialRepository extends JpaRepository<Filial, Integer> {
-	/*@Query("FROM tb_filial obj where obj.tb_filial= :id")
-	List<Filial> buscarFilial(EnumTipoFilial id);*/
-
-	
-	
+	/*@Query("FROM tb_filial obj where obj.tipoFilial=:id")
+	List<Filial> findAll(EnumTipoFilial id);*/
 }

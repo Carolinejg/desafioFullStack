@@ -14,7 +14,7 @@ public class Produto extends GenericEntity{
 	
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//para ser auto incremento
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column

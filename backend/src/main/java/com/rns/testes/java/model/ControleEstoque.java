@@ -22,15 +22,15 @@ import lombok.NoArgsConstructor;
 public class ControleEstoque {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//para ser auto incremento
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)//campo obrigatorio
+	@JoinColumn(nullable = false)
     public Produto produto;
 	
 	@ManyToOne 
-	@JoinColumn(nullable = false)//campo obrigatorio
+	@JoinColumn(nullable = false)
     public Filial filial;
 	
 	@Column

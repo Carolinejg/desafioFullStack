@@ -21,7 +21,7 @@ public class Filial extends GenericEntity{
     private String razaoSocial;
 
     
-    @Column
+    @Column(unique=true)
     private String cnpj;
 
     @Column

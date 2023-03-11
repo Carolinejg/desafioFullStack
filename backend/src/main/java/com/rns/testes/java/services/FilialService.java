@@ -30,17 +30,21 @@ public class FilialService{
 	
 	@Transactional
 	public FilialDTO insert(FilialDTO dto) {
-		Filial entity = new Filial();
-		entity.setCnpj(dto.getCnpj());
-		entity.setEndereco(dto.getEndereco());
-		entity.setRazaoSocial(dto.getRazaoSocial());
-		entity.setTipoFilial(dto.getTipoFilial());
+		try {
+			Filial entity = new Filial();
+			entity.setCnpj(dto.getCnpj());
+			entity.setEndereco(dto.getEndereco());
+			entity.setRazaoSocial(dto.getRazaoSocial());
+			entity.setTipoFilial(dto.getTipoFilial());
+				
+			Date date = new Date();
+			entity.setDataUltAlteracao1(date);
+			entity = repository.save(entity);
 			
-		Date date = new Date();
-		entity.setDataUltAlteracao1(date);
-		entity = repository.save(entity);
-		
-		return new FilialDTO(entity);
+			return new FilialDTO(entity);
+		}catch(DataIntegrityViolationException e) {
+			throw new DatabaseException("CNPJ deve ser único");
+		}
 
 	}
 	
@@ -80,7 +84,7 @@ public class FilialService{
 	
 	/*@Transactional(readOnly=true)
 	public List<FilialDTO> findTipoFilial(EnumTipoFilial id) {
-		List<Filial>listAllById = repository.buscarFilial(id);
+		List<Filial>listAllById = repository.findAll(id);
 		List<FilialDTO>listDto = new ArrayList<>();
 		
 		for(Filial cob : listAllById) {
