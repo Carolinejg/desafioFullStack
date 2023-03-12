@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/home/home_page.dart';
+import 'package:frontend/home/http/http_page.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -10,7 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      getPages: [GetPage(name: '/', page: () => HomePage())],
+      getPages: [
+        GetPage(
+          name: '/', page: () => HomePage(),children: [
+            GetPage(
+              name: '/http', 
+              page: () => HttpPage()
+            )
+          ])
+      ],
     );
   }
 }
