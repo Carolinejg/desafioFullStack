@@ -8,9 +8,10 @@ class ControleEstoqueRepository implements IControleEstoqueRepository{
   @override
   Future<List<ControleEstoqueModel>> findAllControleEstoque() async  {
     try {
-      final response = await http.get(Uri.parse('http://localhost:8080/estoque'));
-      final List<dynamic> responseMap = jsonDecode(response.body);
+      final response = await http.get(Uri.parse('http://10.0.0.103:8080/estoque'));
+      final responseMap = jsonDecode(response.body);
       return responseMap.map<ControleEstoqueModel>((resp) => ControleEstoqueModel.fromMap(resp)).toList();
+    
 } catch (e) {
     
     rethrow;

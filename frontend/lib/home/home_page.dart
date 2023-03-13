@@ -23,21 +23,7 @@ class HomePage extends StatelessWidget {
               onPressed: () => Get.toNamed('/http'),
               // ignore: prefer_const_constructors
               child: Text(
-                'HTTP',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'DIO',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'GET',
+                'Estoques',
                 style: TextStyle(fontSize: 20),
               ),
             )

@@ -25,6 +25,8 @@ class HttpController extends GetxController with StateMixin{
       final dados = await _httpRepository.findAllControleEstoque();
       change(dados, status: RxStatus.success());
     }catch (e) {
+      // ignore: avoid_print
+      print(e);
         change([], status: RxStatus.error('Erro ao buscar controle'));
     }
 

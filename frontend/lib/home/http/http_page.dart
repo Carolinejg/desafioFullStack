@@ -16,10 +16,9 @@ class HttpPage extends GetView<HttpController> {
                itemCount: state.length,
                itemBuilder: (_, index){
                  final ControleEstoqueModel item = state[index];
-                 return ListTile(
-                   title: Text(item.quantidade.toString()),
-                   subtitle: Text('Quantidade de produtos: ${item.produto.length}'),
-                 );
+                 return Text('Filial:'+ item.filial.endereco+ ' Produto:'+ item.produto.nome+' Quantidade:'+ item.quantidade.toString());
+                   
+                 
                },
              );
            }, onError: (error) {

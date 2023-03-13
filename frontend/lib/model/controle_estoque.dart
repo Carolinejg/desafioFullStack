@@ -5,8 +5,8 @@ import 'package:frontend/model/filial.dart';
 import 'package:frontend/model/produto.dart';
 
 class ControleEstoqueModel {
-  List<Produto> produto;
-  List<Filial> filial;
+  Produto produto;
+  Filial filial;
   int quantidade;
 
   ControleEstoqueModel({
@@ -17,16 +17,16 @@ class ControleEstoqueModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'produto': produto.map((x) => x.toMap()).toList(),
-      'filial': filial.map((x) => x.toMap()).toList(),
+      'produto': produto,
+      'filial': filial,
       'quantidade': quantidade,
     };
   }
 
   factory ControleEstoqueModel.fromMap(Map<String, dynamic> map) {
     return ControleEstoqueModel(
-      produto: List<Produto>.from((map['produto'] as List<int>).map<Produto>((x) => Produto.fromMap(x as Map<String,dynamic>),),),
-      filial: List<Filial>.from((map['filial'] as List<int>).map<Filial>((x) => Filial.fromMap(x as Map<String,dynamic>),),),
+      produto: Produto.fromMap(map['produto']),
+      filial: Filial.fromMap(map['filial']),
       quantidade: map['quantidade'] as int,
     );
   }
