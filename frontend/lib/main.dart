@@ -3,6 +3,8 @@ import 'package:frontend/home/home_page.dart';
 import 'package:frontend/home/http/http_page.dart';
 import 'package:get/get.dart';
 
+import 'home/http/http_bindings.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -16,7 +18,8 @@ class MyApp extends StatelessWidget {
           name: '/', page: () => HomePage(),children: [
             GetPage(
               name: '/http', 
-              page: () => HttpPage()
+              page: () => HttpPage(),
+              binding: HttpBindings(),
             )
           ])
       ],
