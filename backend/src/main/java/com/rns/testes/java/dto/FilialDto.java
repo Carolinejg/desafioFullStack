@@ -7,7 +7,9 @@ import com.rns.testes.java.enums.EnumTipoFilial;
 import com.rns.testes.java.model.Filial;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @NoArgsConstructor

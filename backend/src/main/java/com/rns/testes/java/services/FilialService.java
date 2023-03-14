@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rns.testes.java.dto.FilialDTO;
-import com.rns.testes.java.enums.EnumTipoFilial;
+
 import com.rns.testes.java.model.Filial;
 import com.rns.testes.java.repositories.FilialRepository;
 import com.rns.testes.java.services.exceptions.DatabaseException;
@@ -61,39 +61,13 @@ public class FilialService{
 	}
 	
 	
-	/*@Transactional(readOnly=true)
-	public List<FilialDTO> findTipoFilial(EnumTipoFilial id) {
-		List<Filial>listAll = repository.findAll();
-		List<FilialDTO>listDto = new ArrayList<>();
-		List<Filial>listAllById = new ArrayList<>();
-		
-		for(int i =0; i < listAll.size(); i++) {
-			if(listAll.get(i).getTipoFilial().equals(id)) {
-				listAllById.add(listAll.get(i));
-			}
-		}
-		
-		for(Filial cob : listAllById) {
-			listDto.add(new FilialDTO(cob));
-		}
-		
-		return listDto;
-		
-		
-	}*/
+	
 	
 	/*@Transactional(readOnly=true)
-	public List<FilialDTO> findTipoFilial(EnumTipoFilial id) {
-		List<Filial>listAllById = repository.findAll(id);
-		List<FilialDTO>listDto = new ArrayList<>();
-		
-		for(Filial cob : listAllById) {
-			listDto.add(new FilialDTO(cob));
-		}
-		
-		return listDto;
-		
-		
+	public List<Filial> findTipoFilial(int id) {
+		return repository.findAllTipoFilial(id);
+				
+				
 	}*/
 	
 	

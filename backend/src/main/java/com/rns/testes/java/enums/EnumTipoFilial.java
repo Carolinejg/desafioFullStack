@@ -20,4 +20,6 @@ public enum EnumTipoFilial {
     public static List<EnumTipoFilial> getAll() {
         return new ArrayList<>(EnumSet.allOf(EnumTipoFilial.class));
     }
+    
+    
 }

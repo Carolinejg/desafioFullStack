@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.rns.testes.java.dto.FilialDTO;
 import com.rns.testes.java.enums.EnumTipoFilial;
+import com.rns.testes.java.model.Filial;
 import com.rns.testes.java.services.FilialService;
 
 @RestController
@@ -41,11 +42,10 @@ public class FilialResource {
 	}
 	
 	
-	/*@GetMapping(value="tipo/{id}")
-	public ResponseEntity<List<FilialDTO>>findByTipoFilial(@PathVariable EnumTipoFilial id){
-		List<FilialDTO>list = service.findTipoFilial(id);
+	/*@GetMapping("tipo/{id}")
+	public List<Filial>findByTipoFilial(@PathVariable EnumTipoFilial id){
+		return service.findTipoFilial(id.ordinal());
 		
-		return ResponseEntity.ok().body(list);
 	}*/
 
 	
