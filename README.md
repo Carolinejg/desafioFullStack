@@ -7,9 +7,21 @@ O projeto consiste em uma API desenvolvida na linguagem java e que utiliza o fra
 - A entidade que será responsável pelo controle de estoque deve relacionar produtos com filial e indicar a quantidade de itens disponível para esse produto.
 - Deve existir um endpoint que permita a transferência de um produto de uma filial para outra.
 
+## EndPoint construído
+![](https://github.com/Carolinejg/desafioFullStack/blob/main/figuras/API.png)
+
+## Modelo Conceitual
+![](https://github.com/Carolinejg/desafioFullStack/blob/main/figuras/UML.png)
+
+## Modelo do Banco
+![](https://github.com/Carolinejg/desafioFullStack/blob/main/figuras/ER.png)
+
 # Mobile
  
  ### Feature Controle de Estoque
  
  - Implementação de uma tela de listagem de produtos usando a API desevolvida, contendo as seguintes informações: nome do produto, a quantidade e o local que ele se encontra.
+ 
+ ## Layout mobile
+ ![](https://github.com/Carolinejg/desafioFullStack/blob/main/figuras/MOBILE.jpeg)
 
