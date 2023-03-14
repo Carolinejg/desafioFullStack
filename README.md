@@ -10,6 +10,8 @@ O projeto consiste em uma API desenvolvida na linguagem java e que utiliza o fra
 ## EndPoint construído
 ![](https://github.com/Carolinejg/desafioFullStack/blob/main/figuras/API.png)
 
+***Obs: Essa estrutura está disponibilizada para testes no repositório: https://github.com/Carolinejg/desafioFullStack/tree/main/backend/collectionPostman
+
 ## Modelo Conceitual
 ![](https://github.com/Carolinejg/desafioFullStack/blob/main/figuras/UML.png)
 
