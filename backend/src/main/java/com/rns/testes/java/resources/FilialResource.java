@@ -41,14 +41,7 @@ public class FilialResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	
-	/*@GetMapping("tipo/{id}")
-	public List<Filial>findByTipoFilial(@PathVariable EnumTipoFilial id){
-		return service.findTipoFilial(id.ordinal());
-		
-	}*/
-
-	
+			
 	@GetMapping(value="/{id}")
 	public ResponseEntity<FilialDTO>findById(@PathVariable int id){
 		FilialDTO dto = service.findById(id);

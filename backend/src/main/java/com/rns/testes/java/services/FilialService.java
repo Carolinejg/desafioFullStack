@@ -60,17 +60,6 @@ public class FilialService{
 		return listDto;
 	}
 	
-	
-	
-	
-	/*@Transactional(readOnly=true)
-	public List<Filial> findTipoFilial(int id) {
-		return repository.findAllTipoFilial(id);
-				
-				
-	}*/
-	
-	
 	@Transactional(readOnly=true)
 	public FilialDTO findById(int id) {
 		Optional<Filial>obj = repository.findById(id);

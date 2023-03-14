@@ -14,6 +14,5 @@ import org.springframework.data.repository.query.Param;
  * injetada <b>exclusivamente</b> em uma camada service.
  */
 public interface FilialRepository extends JpaRepository<Filial, Integer> {
-	/*@Query("SELECT f FROM Filial f WHERE f.tipoFilial = :tipoFilial ")
-	List<Filial> findAllTipoFilial(@Param("tipoFilial")int tipoFilial);*/
+	
 }
